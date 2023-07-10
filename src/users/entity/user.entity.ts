@@ -1,6 +1,6 @@
-import { Entity, PrimaryColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, PrimaryColumn, Column } from 'typeorm';
 
-@Entity({ name: 'carts' })
+@Entity({ name: 'users' })
 export class UserEntity {
   @PrimaryColumn({ type: 'uuid' })
   id: string;
