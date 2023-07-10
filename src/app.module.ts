@@ -5,6 +5,11 @@ import { CartModule } from './cart/cart.module';
 import { AuthModule } from './auth/auth.module';
 import { OrderModule } from './order/order.module';
 import { ConfigModule } from '@nestjs/config';
+import { join } from 'path';
+import { CartEntity } from './cart/entity/cart.entity';
+import { CartItem } from './cart/entity/cart-item.entity';
+import { UserEntity } from './users/entity/user.entity';
+import { ProductEntity } from './cart/entity/product.entity';
 
 @Module({
   imports: [
@@ -21,7 +26,7 @@ import { ConfigModule } from '@nestjs/config';
       username: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      entities: [CartEntity, CartItem, UserEntity, ProductEntity],
       synchronize: true,
     }),
   ],

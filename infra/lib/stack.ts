@@ -32,6 +32,9 @@ export class CartServiceStack extends cdk.Stack {
         handler: 'handler',
         memorySize: 1024,
         timeout: cdk.Duration.seconds(30),
+        bundling: {
+          externalModules: ['class-transformer', 'class-validator'],
+        },
       },
     );
 
